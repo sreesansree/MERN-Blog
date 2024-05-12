@@ -54,10 +54,10 @@ function Header() {
             }
           >
             <Dropdown.Header>
-              <span className="block text-sm text-blue-900">
+              <span className="block text-sm ">
                 @{currentUser.username}
               </span>
-              <span className="block text-sm font-medium text-blue-900 truncate">
+              <span className="block text-sm font-medium  truncate">
                 {currentUser.email}
               </span>
             </Dropdown.Header>

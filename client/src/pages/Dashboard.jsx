@@ -22,7 +22,7 @@ function Dashboard() {
         <DashSideBar />
       </div>
 
-      <div className="">
+      <div className="flex-grow">
         {/* Profile.... */}
         {tab === 'profile' && <DashProfile />}
       </div>
