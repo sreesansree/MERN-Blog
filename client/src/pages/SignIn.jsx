@@ -7,6 +7,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice.js";
+import OAuth from "../components/OAuth.jsx";
 
 function SignIn() {
   const [formData, setFormData] = useState({});
@@ -96,6 +97,7 @@ function SignIn() {
               gradientDuoTone="purpleToPink"
               type="submit"
               disabled={loading}
+              outline
             >
               {loading ? (
                 <>
@@ -106,6 +108,7 @@ function SignIn() {
                 "Sign In"
               )}
             </Button>
+            <OAuth />
           </form>
           <div className="flex gap-2 text-sm mt-5">
             <span> Don't Have an account?</span>
