@@ -29,7 +29,7 @@ export default function DashProfile() {
         />
         <TextInput type="password" id="password" placeholder="password" />
         <Button type="submit" gradientDuoTone={"purpleToBlue"} outline>
-          Submit
+          Update
         </Button>
       </form>
       <div className="text-red-500 flex justify-between mt-5">
