@@ -52,6 +52,7 @@ function Header() {
               <span className="block text-sm font-medium text-blue-900 truncate">
                 {currentUser.email}
               </span>
+              
             </Dropdown.Header>
             <Link to={"/dashboard?tab=profile"}>
               <Dropdown.Item>Profile</Dropdown.Item>
