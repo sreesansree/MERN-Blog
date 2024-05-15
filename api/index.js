@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.route.js";
 import authRoutes from ".//routes/auth.route.js";
 dotenv.config();
@@ -19,6 +20,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cookieParser())
 app.listen(PORT, () => {
   console.log(`Server is Running on ${PORT}`);
 });
