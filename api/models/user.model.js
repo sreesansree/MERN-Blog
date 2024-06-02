@@ -17,7 +17,12 @@ const userSchema = new mongoose.Schema(
     },
     profilePicture: {
       type: String,
-      dafult: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+      dafult:
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }
