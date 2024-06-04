@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import DashSideBar from "../components/DashSideBar.jsx";
 import DashProfile from "../components/DashProfile.jsx";
+import DashPosts from "../components/DashPosts.jsx";
 
 function Dashboard() {
   const location = useLocation();
@@ -10,8 +11,8 @@ function Dashboard() {
     const urlParams = new URLSearchParams(location.search);
     const tabFromUrl = urlParams.get("tab");
     // console.log(tabFromUrl);
-    if(tabFromUrl){
-      setTab(tabFromUrl)
+    if (tabFromUrl) {
+      setTab(tabFromUrl);
     }
   }, [location.search]);
 
@@ -22,10 +23,10 @@ function Dashboard() {
         <DashSideBar />
       </div>
 
-      <div className="flex-grow">
-        {/* Profile.... */}
-        {tab === 'profile' && <DashProfile />}
-      </div>
+      {/* Profile.... */}
+      {tab === "profile" && <DashProfile />}
+      {/* posts... */}
+      {tab === "posts" && <DashPosts />}
     </div>
   );
 }
