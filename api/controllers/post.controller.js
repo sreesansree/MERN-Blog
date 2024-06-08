@@ -55,16 +55,28 @@ export const getposts = async (req, res, next) => {
       now.getMonth() - 1,
       now.getDate()
     );
-    
+
     const lastMonthPosts = await Post.countDocuments({
       createdAt: { $gte: oneMonthAgo },
     });
-    console.log(lastMonthPosts,'last Month post');
+    console.log(lastMonthPosts, "last Month post");
     res.status(200).json({
       posts,
       totalPosts,
       lastMonthPosts,
     });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const deletePost = async (req, res, next) => {
+  if (!req.user.isAdmin || req.user._id !== req.params.userID) {
+    return next(errorHandler(403, "You are not allowed to delete this post"));
+  }
+  try {
+    await Post.findByIdAndDelete(req.params.postId);
+    res.status(200).json("The post has been deleted");
   } catch (error) {
     next(error);
   }

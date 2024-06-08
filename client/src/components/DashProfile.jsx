@@ -305,7 +305,7 @@ export default function DashProfile() {
               <Button color="failure" onClick={handleDeleteUser}>
                 Yes, I'm Sure
               </Button>
-              <Button color="gray">No,Cancel</Button>
+              <Button onClick={()=>setShowModal(false)} color="gray">No,Cancel</Button>
             </div>
           </div>
         </ModalBody>
